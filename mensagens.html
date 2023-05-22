@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="CSS/Style.css" rel="stylesheet"/>
+	<title>Tripulação - Mensagens</title>
+	<meta charset="utf-8">
+	<script src="jquery-3.6.4.min.js"></script>
+	<script src="funcoes.js"></script>
+	<script>
+		$(document).ready(function() {
+			obterMensagens();
+		});
+
+		function obterMensagens() {
+			$.ajax({
+				url: 'http://prj-p2-js.herokuapp.com/mensagens', // Substitua pela URL correta da API
+				method: 'GET',
+				success: function(response) {
+					if (response && Array.isArray(response)) {
+						exibirMensagens(response);
+					}
+				},
+				error: function(error) {
+					console.log('Erro ao obter as mensagens:', error);
+				}
+			});
+		}
+
+		function exibirMensagens(mensagens) {
+			var tabela = document.getElementById('tabela-mensagens');
+
+			for (var i = 0; i < mensagens.length; i++) {
+				var mensagem = mensagens[i];
+				var linha = tabela.insertRow();
+
+				var colunaNome = linha.insertCell();
+				colunaNome.innerHTML = mensagem.nome;
+
+				var colunaEmail = linha.insertCell();
+				colunaEmail.innerHTML = mensagem.email;
+
+				var colunaMensagem = linha.insertCell();
+				colunaMensagem.innerHTML = mensagem.mensagem;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="corposite">
+		<header>
+			<div class="logo">
+				<img class="barco" src="imagens/barco1.png" />
+				<div class="txtop">
+					<h1>Luxo</h1>
+					<h2>Aluguel de iates</h2>
+				</div>
+			</div>
+			<nav>
+				<ul>
+					<li><a class="menu" href="Projeto iate.html">PÁGINA INICIAL</a></li>
+					<li class="barra"> | </li>
+					<li><a class="menu" href="Aluguel.html">ALUGUEL DE IATES</a></li>
+					<li class="barra"> | </li>
+					<li><a class="menu" href="Destinos.html">DESTINOS</a></li>
+					<li class="barra"> | </li>
+					<li><a class="menu" href="admin.html">ADMIN</a></li>
+					<li class="barra"> | </li>
+					<li><a class="menu" href="Contato.html">CONTATO</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+
+	<table id="tabela-mensagens">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Mensagem</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- As linhas da tabela serão inseridas dinamicamente aqui -->
+		</tbody>
+	</table>
+
+</body>
+</html>
