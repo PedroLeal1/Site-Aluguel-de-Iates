@@ -7,7 +7,6 @@ body{
 }
 #corposite{
     width: 980px;
-    /* centralizando a div (nesse caso abaixo o site) para qualquer resolução de tela */
     margin-left: auto;
     margin-right: auto;
     background-color: #EBEBEB;
@@ -22,7 +21,6 @@ header{
 .logo{
     margin: 0;
     padding-right: 0px;
-    /* background-color: yellowgreen; */
     padding-top: 0px;
     display: inline-block;
 }
@@ -32,10 +30,8 @@ header{
     padding-left: 20px;
     padding-top: 20px;
     padding-right: 5px;
-    /* background-color: slateblue; */
 }
 .txtop{
-    /* background-color: turquoise; */
     padding-bottom: 0px;
     font-size: 14px;
     display: inline-block;
@@ -46,34 +42,27 @@ h1{
     margin: 0;
     font-family: arial, helvetica, sans-serif;
     font-style: italic;
-    /* background-color: rgb(87, 105, 209); */
 }
 h2{
     display: inline-block;
     font-family: arial, helvetica, sans-serif;
-    /* alterando as margens do texto, div ou o que tiver trabalhando */
     margin: 0%;
 }
 nav{
-    /* background-color:red; */
     display: inline-block;
     padding: 0;
     padding-left: 160px;
     font-family: Arial, Helvetica, sans-serif;
 }
 nav ul{
-    /* tirando a marcação do menu */
     list-style: none;
 }
 nav ul li{
-/* colocando o menu em "linha" */
     display: inline-block;
-/* colocando um afastamento entre os menu */
     padding-left: 7px;
     padding-right: 7px;
     padding-top: 15px;
     padding-bottom: 15px;
-    /* contraolando o tamanho do texto */
     font-size: 12px;
 }
 .menu,.barra{
@@ -94,9 +83,7 @@ nav ul li{
     position: absolute;
     top: 200px;
     left: 500px;
-    /* definindo a largura do conteiner */
     width: 350px;
-    /* definindo a altura do conteiner */
     height: 140px;
     padding-left: 30px;
     padding-top: 30px;
@@ -105,19 +92,16 @@ nav ul li{
 }   
 .contato{
     position: absolute;
-    /* background-color: burlywood; */
 }
 #barquinho{
     margin-top: 30px;
     padding-right: 10px;
-    /* background-color: aqua; */
 }
 .fone{
     display: inline-block;
 }
 .telefone{
     color: #C6B07F;
-    /* background-color: brown; */
     display: inline-block;
 }
 /* ------------------------------------------------------------------------ */
@@ -125,18 +109,15 @@ nav ul li{
     width: 455px;
     display: inline-block;
     margin-bottom: 0;
-    /* background-color: rosybrown; */
     padding: 15px;
 }
 #informacoes{
-    /* background-color: springgreen; */
     margin: 0;
     padding: 0;
 }
 #destino h3{
     display: inline-block;
     margin-top: -32px;
-    /* alinha verticalmente no top no middle ou no bottom */
     vertical-align: middle;
     padding-left: 3px;
 }
@@ -160,7 +141,6 @@ nav ul li{
 #nossafrota h3{
     display: inline-block;
     margin-top: -27px;
-    /* alinha verticalmente no top no middle ou no bottom */
     vertical-align: middle;
     padding-left: 3px;
 }

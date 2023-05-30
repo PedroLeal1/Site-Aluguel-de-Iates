@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<link href="CSS/Style.css" rel="stylesheet"/>
+	<link href="CSS/Style.css" rel="stylesheet" />
 	<title>Tripulação - Mensagens</title>
 	<meta charset="utf-8">
 	<script src="jquery-3.6.4.min.js"></script>
 	<script src="funcoes.js"></script>
 	<script>
-		$(document).ready(function() {
+		$(document).ready(function () {
 			obterMensagens();
 		});
 
@@ -15,12 +16,12 @@
 			$.ajax({
 				url: 'http://prj-p2-js.herokuapp.com/mensagens', // Substitua pela URL correta da API
 				method: 'GET',
-				success: function(response) {
+				success: function (response) {
 					if (response && Array.isArray(response)) {
 						exibirMensagens(response);
 					}
 				},
-				error: function(error) {
+				error: function (error) {
 					console.log('Erro ao obter as mensagens:', error);
 				}
 			});
@@ -44,7 +45,230 @@
 			}
 		}
 	</script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: #918f8f79;
+		}
+
+		#corposite {
+			width: 980px;
+			margin-left: auto;
+			margin-right: auto;
+			background-color: #EBEBEB;
+			box-shadow: 0px 0px 50px black;
+			padding-bottom: 60px;
+			position: relative;
+		}
+
+		header {
+			background-color: #21272B;
+			color: white;
+		}
+
+		.logo {
+			margin: 0;
+			padding-right: 0px;
+			display: inline-block;
+		}
+
+		.barco {
+			margin: 0px;
+			padding-left: 20px;
+			padding-top: 20px;
+			padding-right: 5px;
+		}
+
+		.txtop {
+			padding-bottom: 0px;
+			font-size: 14px;
+			display: inline-block;
+			font-style: italic;
+		}
+
+		h1 {
+			color: #1BB4E8;
+			margin: 0;
+			font-family: arial, helvetica, sans-serif;
+			font-style: italic;
+		}
+
+		h2 {
+			display: inline-block;
+			font-family: arial, helvetica, sans-serif;
+			margin: 0%;
+		}
+
+		nav {
+			display: inline-block;
+			padding: 0;
+			padding-left: 160px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		nav ul {
+			list-style: none;
+		}
+
+		nav ul li {
+			display: inline-block;
+			padding-left: 7px;
+			padding-right: 7px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			font-size: 12px;
+		}
+
+		.menu,
+		.barra {
+			color: #ffffff;
+
+			text-decoration: none;
+		}
+
+		.menu:hover {
+			color: #1BB4E8;
+		}
+
+		#barcoprincipal {
+			position: relative;
+		}
+
+		.fundopreto {
+			background-color: rgba(26, 50, 67, 0.9);
+			color: white;
+			position: absolute;
+			top: 200px;
+			left: 500px;
+			width: 350px;
+			height: 140px;
+			padding-left: 30px;
+			padding-top: 30px;
+			padding-right: 50px;
+			padding-bottom: 50px;
+		}
+
+		.contato {
+			position: absolute;
+		}
+
+		#barquinho {
+			margin-top: 30px;
+			padding-right: 10px;
+		}
+
+		.fone {
+			display: inline-block;
+		}
+
+		.telefone {
+			color: #C6B07F;
+		}
+
+		#destino {
+			width: 455px;
+			display: inline-block;
+			margin-bottom: 0;
+			padding: 15px;
+		}
+
+		#informacoes {
+			margin: 0;
+			padding: 0;
+		}
+
+		#destino h3 {
+			display: inline-block;
+			margin-top: -32px;
+			vertical-align: middle;
+			padding-left: 3px;
+		}
+
+		#destino p,
+		#destino h4 {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		#destino div {
+			background-color: royalblue;
+			color: white;
+		}
+
+		#nossafrota {
+			width: 450px;
+			display: inline-block;
+			padding: 15px;
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+
+		#nossafrota h3 {
+			display: inline-block;
+			margin-top: -27px;
+			vertical-align: middle;
+			padding-left: 3px;
+		}
+
+		#nossafrota p {
+			padding-top: 10px;
+			padding-bottom: 15px;
+		}
+
+		#nossafrota h4 {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		#nossafrota div {
+			background-color: rgb(182, 172, 127);
+			color: white;
+		}
+
+		.b1 {
+			margin-bottom: 11px;
+		}
+
+		.b2 {
+			margin-left: 11px;
+			margin-bottom: 11px;
+		}
+
+		.b4 {
+			margin-left: 11px;
+		}
+
+		#footer {
+			background-color: rgba(26, 50, 67, 0.15);
+			margin: 0;
+			padding: 15px;
+			position: absolute;
+			width: 100%;
+		}
+
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			padding: 8px;
+			border-bottom: 1px solid #ddd;
+		}
+
+		thead {
+			background-color: #21272B;
+			color: white;
+		}
+	</style>
 </head>
+
 <body>
 	<div id="corposite">
 		<header>
@@ -70,7 +294,6 @@
 			</nav>
 		</header>
 	</div>
-
 	<table id="tabela-mensagens">
 		<thead>
 			<tr>
@@ -80,9 +303,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<!-- As linhas da tabela serão inseridas dinamicamente aqui -->
 		</tbody>
 	</table>
-
 </body>
+
 </html>
